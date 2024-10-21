@@ -1,5 +1,6 @@
 $blue: #000055
 $white: #ffffff
+$magenta: #ff267e
 
 $font-suisseintl-med: SuisseIntl-Medium, sans-serif
 
@@ -22,6 +23,65 @@ body
     display: flex
     flex-direction: column
     align-items: center
-    justify-content: flex-end
+    justify-content: flex-start
     height: calc(var(--vh, 1vh) * 100)
     overflow: hidden
+    padding-top: 40px
+    &::before
+      content: ""
+      display: block
+      background: linear-gradient(180deg, $blue 0%, rgba($white , 0) 100%)
+      width: 100%
+      height: 40%
+      position: absolute
+      left: 0
+      top: 0
+      z-index: 0
+    &::after
+      content: ""
+      display: block
+      background: url("../img/wheel.png") no-repeat 100% 0/cover
+      width: 1570px
+      height: 740px
+      position: absolute
+      right: -50px
+      bottom: -50px
+      z-index: 1
+    &__logo
+      max-width: 560px
+      z-index: 1
+      &::before
+        content: ""
+        display: block
+        background: linear-gradient(0deg, $magenta 0%, rgba($white , 0) 100%)
+        width: 100%
+        height: 35%
+        position: absolute
+        left: 0
+        bottom: 0
+        z-index: 0
+    &__pers
+      max-width: 665px
+      z-index: 2
+      margin: auto auto -10px -100px
+    &__text
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      width: 560px
+      margin-top: 30px
+      &-item
+        color: $white
+        font-family: $font-suisseintl-med
+        font-size: 52px
+        line-height: 52px
+        z-index: 1
+        width: 100%
+        text-align: center
+        letter-spacing: .04em
+        padding: 12px 10px 9px 10px
+        &:nth-child(1)
+          background: $blue
+        &:nth-child(2)
+          background: $magenta
